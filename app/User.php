@@ -27,4 +27,35 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class)->using(Follower::class, 'follower_id');
+    }
+
+    public function budgets()
+    {
+        return $this->hasMany(Budget::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function requirements()
+    {
+        return $this->hasMany(Requirement::class);
+    }
+
 }
