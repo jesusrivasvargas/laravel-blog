@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BudgetController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check-profile');
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        //
+        return view('budgets.index');
     }
 
     /**
@@ -24,7 +30,7 @@ class BudgetController extends Controller
      */
     public function create()
     {
-        //
+        return view('budgets.create');
     }
 
     /**
@@ -46,7 +52,7 @@ class BudgetController extends Controller
      */
     public function show(Budget $budget)
     {
-        //
+        return view('budgets.show');
     }
 
     /**
@@ -57,7 +63,7 @@ class BudgetController extends Controller
      */
     public function edit(Budget $budget)
     {
-        //
+        return view('budgets.edit');
     }
 
     /**

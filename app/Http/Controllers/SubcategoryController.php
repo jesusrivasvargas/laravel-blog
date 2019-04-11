@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check-profile');
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('subcategories.indexs');
     }
 
     /**
@@ -24,7 +30,7 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('subcategories.create');
     }
 
     /**
@@ -46,7 +52,7 @@ class SubcategoryController extends Controller
      */
     public function show(Subcategory $subcategory)
     {
-        //
+        return view('subcategories.show');
     }
 
     /**
@@ -57,7 +63,7 @@ class SubcategoryController extends Controller
      */
     public function edit(Subcategory $subcategory)
     {
-        //
+        return view('subcategories.edit');
     }
 
     /**

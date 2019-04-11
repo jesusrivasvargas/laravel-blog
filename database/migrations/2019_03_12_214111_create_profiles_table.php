@@ -17,9 +17,9 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('subcategory_id');
-            $table->date('birthday');
+            //$table->date('birthday');
             $table->string('id_number');
-            $table->string('passport');
+            $table->string('passport')->nullable();
             $table->string('phone');
             $table->string('cellphone');
             $table->string('rating')->default('5');

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class FollowerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check-profile');
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class FollowerController extends Controller
      */
     public function index()
     {
-        //
+        return view('followers.index');
     }
 
     /**
@@ -24,7 +30,7 @@ class FollowerController extends Controller
      */
     public function create()
     {
-        //
+        return view('followers.create');
     }
 
     /**
@@ -46,7 +52,7 @@ class FollowerController extends Controller
      */
     public function show(Follower $follower)
     {
-        //
+        return view('followers.show');
     }
 
     /**
@@ -57,7 +63,7 @@ class FollowerController extends Controller
      */
     public function edit(Follower $follower)
     {
-        //
+        return view('followers.edit');
     }
 
     /**

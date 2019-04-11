@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class RequirementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check-profile');
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class RequirementController extends Controller
      */
     public function index()
     {
-        //
+        return view('requirements.index');
     }
 
     /**
@@ -24,7 +30,7 @@ class RequirementController extends Controller
      */
     public function create()
     {
-        //
+        return view('requirements.create');
     }
 
     /**
@@ -46,7 +52,7 @@ class RequirementController extends Controller
      */
     public function show(Requirement $requirement)
     {
-        //
+        return view('requirements.show');
     }
 
     /**
@@ -57,7 +63,7 @@ class RequirementController extends Controller
      */
     public function edit(Requirement $requirement)
     {
-        //
+        return view('requirements.edit');
     }
 
     /**

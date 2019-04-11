@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check-profile');
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('messages.index');
     }
 
     /**
@@ -24,7 +30,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        return view('messages.create');
     }
 
     /**
@@ -46,7 +52,7 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //
+        return view('messages.show');
     }
 
     /**
@@ -57,7 +63,7 @@ class MessageController extends Controller
      */
     public function edit(Message $message)
     {
-        //
+        return view('messages.edit');
     }
 
     /**
