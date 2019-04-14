@@ -57,10 +57,12 @@ class ProfileController extends Controller
             'passport' => 'required|numeric',
             'cellphone' => 'required|numeric',
             'subcategory_id' => 'required|integer',
+            'username' => 'required|string|unique:profiles'
         ]);
         $user = request()->user();
         $profile = new Profile;
         $profile->fill($request->all());
+        $profile->username = '@' . strtolower($profile->username);
         $user->profile()->save($profile);
 
         return redirect()->route('home');

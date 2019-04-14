@@ -18,6 +18,7 @@
                 </div>
                 <div class="col-8">
                         <p><b>Email:</b> {{ $user->email }}</p> 
+                        <p><b>Nombre de usuario:</b> {{ $user->profile->username }}</p>
                         <form method="post" action="{{ route('profiles.update', ['profile' => $user->profile->id]) }}">
                             <div class="form-group">
                                 <label for="name">{{ __('Nombre') }}</label>

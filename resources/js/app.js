@@ -31,3 +31,4 @@ Vue.component('infinite', 	require('vue-infinite-loading').default);
 const app = new Vue({
     el: '#app'
 });
+

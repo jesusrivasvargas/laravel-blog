@@ -22,3 +22,5 @@ Route::get('/posts', 'PostController@index');
 Route::get('/categories', 'CategoryController@index');
 Route::get('/subcategories', 'SubcategoryController@index');
 Route::get('/search', 'CategoryController@search');
+Route::post('/follow', 'UserController@follow');
+Route::post('/unfollow', 'UserController@unfollow');

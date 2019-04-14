@@ -4,9 +4,9 @@
             <h4>{{ post.body }}</h4>
         </div>
 
-        <infinite-loading @distance="1" @infinite="infiniteHandler">
+        <infinite-loading @distance="1" @infinite="infiniteHandler" spinner="spiral">
             <div slot="no-more">No hay más resultados.</div>
-            <div slot="spinner">Cargando...</div>
+            
             <div slot="no-results">Sin resultados</div>
         </infinite-loading>
     </div>

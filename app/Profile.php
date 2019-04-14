@@ -12,7 +12,8 @@ class Profile extends Model
         'passport',
         'phone',
         'cellphone',
-        'rating'
+        'rating',
+        'username'
     ];
 
     public function user()

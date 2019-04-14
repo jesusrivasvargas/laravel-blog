@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('passport')->nullable();
             $table->string('phone');
             $table->string('cellphone');
+            $table->string('username')->unique();
             $table->string('rating')->default('5');
             $table->timestamps();
         });

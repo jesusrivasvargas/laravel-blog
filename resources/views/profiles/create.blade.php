@@ -25,10 +25,24 @@ Crear perfil de usuario |
                     <hr>
                     <form method="post" action="{{ route('profiles.store') }}">
                         @csrf 
+
+                        <div class="form-group">
+                            <label for="username">{{ __('Nombre de usuaio') }}</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">@</div>
+                                </div>
+                            <input id="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                            </div> @if ($errors->has('username'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('username') }}</strong>
+                                </span>
+                            @endif               
+                        </div>
                         
                         <div class="form-group">
                             <label for="id_number">{{ __('Número de cédula') }}</label>
-                            <input id="id_number" class="form-control{{ $errors->has('id_number') ? ' is-invalid' : '' }}" name="id_number" value="{{ old('id_number') }}" required autofocus>
+                            <input id="id_number" class="form-control{{ $errors->has('id_number') ? ' is-invalid' : '' }}" name="id_number" value="{{ old('id_number') }}" required>
                             @if ($errors->has('id_number'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('id_number') }}</strong>

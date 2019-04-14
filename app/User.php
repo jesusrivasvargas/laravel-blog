@@ -33,7 +33,7 @@ class User extends Authenticatable implements HasMedia
         'password', 'remember_token',
     ];
 
-    protected $with = ['profile'];
+    protected $with = ['profile', 'profile.subcategory', 'profile.subcategory.category'];
 
     public function avatar()
     {
@@ -66,7 +66,7 @@ class User extends Authenticatable implements HasMedia
 
     public function followers()
     {
-        return $this->belongsToMany(User::class)->using(Follower::class, 'follower_id');
+        return $this->hasMany(Follower::class);
     }
 
     public function budgets()

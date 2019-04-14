@@ -23,7 +23,8 @@
                    
                     <p><b>Nombre:</b> {{ $user->name }}</p>
                     <p><b>Apellido:</b> {{ $user->lastname }}</p>
-                    <p><b>Email:</b> {{ $user->email }}</p> 
+                    <p><b>Email:</b> {{ $user->email }}</p>
+                    <p><b>Nombre de usuario:</b> {{ $user->profile->username }}</p> 
                     <p><b>Número de cédula:</b> {{ $user->profile->id_number }}</p>
                     <p><b>Número de pasaporte:</b> {{ $user->profile->passport }}</p>
                     <p><b>Número de teléfono:</b> {{ $user->profile->phone }}</p>  

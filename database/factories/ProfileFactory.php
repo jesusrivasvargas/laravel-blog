@@ -9,5 +9,6 @@ $factory->define(App\Profile::class, function (Faker $faker) {
         'passport' => '123456789',
         'phone' => '123456789',
         'cellphone' => '123456789',
+        'username' => '@' . $faker->userName
     ];
 });

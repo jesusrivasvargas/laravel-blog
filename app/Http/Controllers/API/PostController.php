@@ -13,6 +13,8 @@ class PostController extends Controller
     }
     
     public function index() {
+        $user = request()->user();
+        
         return \App\Post::paginate();
     }
 }
