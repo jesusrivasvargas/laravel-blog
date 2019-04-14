@@ -76,7 +76,7 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        return redirect()->route('home');
+        return view('profiles.show', compact('profile'));
     }
 
     /**

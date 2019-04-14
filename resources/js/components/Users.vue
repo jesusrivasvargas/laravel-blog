@@ -1,23 +1,7 @@
 <template>
     <div>
-        <div class="card mb-2" v-for="(user, index) in list" :key="user.id">
-            <div class="card-body d-flex">
-                
-                <img class="mr-4 rounded-circle" height="80px" width="80px" :src="user.avatar">
-                
-                <div>
-                    <h5 class="card-title"><a href="">{{ user.name }} {{ user.lastname }}</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ user.username }}</h6>
-                    <p class="card-text">{{ user.category }} - {{ user.subcategory }}</p>
-                
-                </div>
-                <div class="ml-auto">
-                    <button @click="unfollow(index)" class="btn btn-primary btn-sm" v-if="user.followed">Siguiendo</button>
-                    <button @click="follow(index)" class="btn btn-outline-primary btn-sm" v-else>Seguir</button>
-                </div>
-                
-            </div>
-        </div>
+        <user v-for="user in list" :key="user.id" :user="user"></user>
+        
 
         <infinite-loading @distance="1" @infinite="infiniteHandler" spinner="spiral"> 
             <div slot="no-more">No hay más resultados.</div>            
@@ -31,7 +15,9 @@
         data() {
             return {
                 list: [],
-                page: 0
+                page: 0,
+                btnTexts: ['Siguiendo', 'Dejar de seguir'],
+                i: 0
             }
         },
         methods: {

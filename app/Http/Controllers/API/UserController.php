@@ -36,7 +36,8 @@ class UserController extends Controller
                 'subcategory' => $user->profile->subcategory->subcategory,
                 'avatar' => $user->avatar(),
                 'username' => $user->profile->username,
-                'followed' => count($user->followers) > 0
+                'followed' => count($user->followers) > 0,
+                'url' => route('profiles.show', ['profile' => $user->profile->id])
             ];
         });
 
